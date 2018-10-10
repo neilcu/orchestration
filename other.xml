@@ -1,0 +1,22 @@
+<application>
+  <component name="PyTestFrameworkService">
+    <option name="SDK_TO_PYTEST">
+      <map>
+        <entry key="C:\Users\ncullum\venv\Scripts\python.exe" value="false" />
+        <entry key="C:\Users\ncullum\venv\csv_to_pg_with_check_aws.py\Scripts\python.exe" value="false" />
+      </map>
+    </option>
+    <option name="SDK_TO_NOSETEST">
+      <map>
+        <entry key="C:\Users\ncullum\venv\Scripts\python.exe" value="false" />
+        <entry key="C:\Users\ncullum\venv\csv_to_pg_with_check_aws.py\Scripts\python.exe" value="false" />
+      </map>
+    </option>
+    <option name="SDK_TO_TRIALTEST">
+      <map>
+        <entry key="C:\Users\ncullum\venv\Scripts\python.exe" value="false" />
+        <entry key="C:\Users\ncullum\venv\csv_to_pg_with_check_aws.py\Scripts\python.exe" value="false" />
+      </map>
+    </option>
+  </component>
+</application>
