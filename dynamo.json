@@ -8,7 +8,7 @@
       "Type": "Job:Command",
       "SubApplication": "tstsub",
       "Host": "ncuctm",
-      "Description": "Hello this is my change",
+      "Description": "Change for main",
       "RunAs": "ctms",
       "Application": "tstapp",
       "Command": "ls -la",
