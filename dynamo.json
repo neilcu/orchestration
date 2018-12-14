@@ -1,0 +1,117 @@
+{
+  "dynamo": {
+    "Type": "SimpleFolder",
+    "ControlmServer": "ctmaws",
+    "SiteStandard": "jobs-as-code",
+    "OrderMethod": "Manual",
+    "testjb2": {
+      "Type": "Job:Command",
+      "SubApplication": "tstsub",
+      "Host": "ncuctm",
+      "Description": "Hello this is my change",
+      "RunAs": "ctms",
+      "Application": "tstapp",
+      "Command": "ls -la",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "NONE"
+        ],
+        "SpecificDates": [],
+        "DaysRelation": "OR"
+      },
+      "eventsToWaitFor": {
+        "Type": "WaitForEvents",
+        "Events": [
+          {
+            "Event": "testjb1-TO-testjb2"
+          }
+        ]
+      },
+      "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+          {
+            "Event": "testjb2-TO-testjb3"
+          }
+        ]
+      },
+      "eventsToDelete": {
+
+        "Type": "DeleteEvents",
+        "Events": [
+          {
+            "Event": "testjb1-TO-testjb2"
+          }
+        ]
+      }
+    },
+    "testjb3": {
+      "Type": "Job:Command",
+      "SubApplication": "tstsub",
+      "Host": "ncuctm",
+      "RunAs": "ctms",
+      "Application": "tstapp",
+      "Command": "ls -la",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "NONE"
+        ],
+        "SpecificDates": [],
+        "DaysRelation": "OR"
+      },
+      "eventsToWaitFor": {
+        "Type": "WaitForEvents",
+        "Events": [
+          {
+            "Event": "testjb2-TO-testjb3"
+          }
+        ]
+      },
+      "eventsToDelete": {
+        "Type": "DeleteEvents",
+        "Events": [
+          {
+            "Event": "testjb2-TO-testjb3"
+          }
+        ]
+      }
+    },
+    "DYNFILE": {
+      "Type": "Job:Command",
+      "SubApplication": "tstsub",
+      "Host": "ncuctm",
+      "Description": "Template",
+      "RunAs": "neilc",
+      "Application": "tstapp",
+      "Command": "/home/neilc/myscript.sh neilc",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "NONE"
+        ],
+        "SpecificDates": [],
+        "DaysRelation": "OR"
+      },
+      "snowflake": {
+        "Type": "Resource:Mutex",
+        "MutexType": "Exclusive"
+      },
+      "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+          {
+            "Event": "testjb1-TO-testjb2"
+          }
+        ]
+      }
+    }
+  }
+}
