@@ -8,7 +8,7 @@
       "Type": "Job:Command",
       "SubApplication": "tstsub",
       "Host": "ncuctm",
-      "Description": "Change for main",
+      "Description": "Dynamo master template",
       "RunAs": "ctms",
       "Application": "tstapp",
       "Command": "ls -la",
